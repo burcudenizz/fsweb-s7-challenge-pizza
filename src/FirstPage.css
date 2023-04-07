@@ -1,0 +1,39 @@
+body {
+  background-color: rgb(158, 0, 0);
+}
+img {
+  display: block;
+  margin: auto;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 70vw;
+}
+.heading {
+  text-align: center;
+  color: #eedada;
+  margin-top: 3%;
+}
+h5 {
+  font-family: "Gloria Hallelujah", cursive;
+  font-size: 2rem;
+}
+h1 {
+  font-family: "Francois One", sans-serif;
+  font-size: 3rem;
+  letter-spacing: 1px;
+  text-shadow: 2px 3px #0e0d0d;
+}
+button {
+  padding: 20px;
+  border-radius: 5px;
+  font-family: "Francois One", sans-serif;
+  font-size: 1.2rem;
+  transition: 0.7s;
+  border: 1px solid #eedada;
+}
+button:hover {
+  background-color: #101010;
+  color: #eedada;
+}
