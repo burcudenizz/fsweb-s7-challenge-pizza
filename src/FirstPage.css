@@ -1,14 +1,18 @@
+* {
+  margin: 0;
+  padding: 0;
+}
 body {
   background-color: rgb(158, 0, 0);
+  display: flex;
 }
-img {
-  display: block;
-  margin: auto;
-  position: absolute;
+.firstPhoto {
+  position: fixed;
+  width: 90vw;
   bottom: 0;
-  left: 0;
-  right: 0;
-  width: 70vw;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -1;
 }
 .heading {
   text-align: center;
@@ -19,21 +23,22 @@ h5 {
   font-family: "Gloria Hallelujah", cursive;
   font-size: 2rem;
 }
-h1 {
+.heading h1 {
   font-family: "Francois One", sans-serif;
   font-size: 3rem;
   letter-spacing: 1px;
   text-shadow: 2px 3px #0e0d0d;
 }
-button {
-  padding: 20px;
+.firstButton {
+  padding: 30px;
   border-radius: 5px;
   font-family: "Francois One", sans-serif;
   font-size: 1.2rem;
   transition: 0.7s;
   border: 1px solid #eedada;
+  margin-top: 1%;
 }
-button:hover {
+.firstButton:hover {
   background-color: #101010;
   color: #eedada;
 }

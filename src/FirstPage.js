@@ -11,14 +11,18 @@ export default function FirstPage() {
             <div className="heading">
               <h1>YEMEK DÜNYASI</h1>
               <h5>BİR DİLİM LEZZET BİNLERCE MUTLULUK :)</h5>
-              <Link to="/orderpizza">
-                <button>MUTLU OL!</button>
+              <Link to="/mainpage">
+                <button className="firstButton">MUTLU OL!</button>
               </Link>
             </div>
-            <img src="https://www.eauclairesbestpizza.com/wp-content/uploads/2022/06/pizza-6-speciality-1-1fx9ae.png" />
+            <img
+              alt="pizzaphoto"
+              className="firstPhoto"
+              src="https://www.eauclairesbestpizza.com/wp-content/uploads/2022/06/pizza-6-speciality-1-1fx9ae.png"
+            />
           </div>
         </Route>
-        <Route exact path="/orderpizza">
+        <Route exact path="/mainpage">
           <MainPage />
         </Route>
       </Switch>
