@@ -11,7 +11,11 @@ export default function Mobile() {
         />
       </div>
       <div className="mobileText">
-        <h2>YEMEK DÜNYASI'NIN MOBİL UYGULAMASINI DENEMEDİNİZ Mİ?</h2>
+        <h2>
+          YEMEK DÜNYASI'NIN <br />
+          MOBİL UYGULAMASINI <br />
+          DENEMEDİNİZ Mİ?
+        </h2>
         <h5>İlk Üyeliğe %25 İndirim Şansı</h5>
       </div>
     </div>

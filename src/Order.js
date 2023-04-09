@@ -19,7 +19,7 @@ export default function Order() {
       <div className="mobileAppPart">
         <Mobile />
       </div>
-      <div className="formPart">
+      <div className="orderPart">
         <Form />
       </div>
       <div className="footerPart">

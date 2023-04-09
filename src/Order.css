@@ -17,7 +17,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: 1.5rem;
+  font-size: 2.1rem;
 }
 h5 {
   color: #faf7f2;
@@ -32,9 +32,69 @@ h5 {
 }
 .formPart {
   background-color: #faf7f2;
-  max-width: 90%;
-  margin-top: 10rem;
-  margin-bottom: 10rem;
-  padding: 5px;
+  max-width: 70%;
+  margin-top: 7rem;
+  margin-bottom: 7rem;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
   border-radius: 15px;
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
+    rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
+    rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+}
+
+.formPart {
+  display: flex;
+  flex-direction: column;
+}
+h3 {
+  color: black;
+  margin: 1rem;
+  font-family: "Francois One", sans-serif;
+  font-size: 2.1rem;
+  letter-spacing: 0.1rem;
+}
+.formHeading {
+  color: #000000;
+  margin-top: 15px;
+  font-family: "Russo One", sans-serif;
+  font-size: 3rem;
+  letter-spacing: 2px;
+  text-shadow: 2px 3px #faf7f2;
+  margin-bottom: 5rem;
+}
+.order_button {
+  background-color: rgb(206, 40, 41);
+  padding: 30px;
+  width: 480px;
+  border-radius: 5px;
+  font-family: "Francois One", sans-serif;
+  font-size: 1.6rem;
+  transition: 0.7s;
+  border: 1px solid #000000;
+  margin-top: 1%;
+  color: #000000;
+  margin-top: 5rem;
+}
+.order_button:hover {
+  background-color: #101010;
+  color: #eedada;
+}
+
+.ingredients {
+  flex-wrap: wrap;
+  display: flex;
+  width: 50%;
+}
+.formContent {
+  border: 2px solid red;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Francois One", sans-serif;
+  font-size: 1.4rem;
+}
+input {
+  width: 80%;
 }
