@@ -64,8 +64,8 @@ const formSchema = yup.object().shape({
 export default function Form() {
   const [form, setForm] = useState({
     pizzatype: "",
-    pizzasize: "none",
-    doughsize: "none",
+    pizzasize: "",
+    doughsize: "",
     cheddar: false,
     pepper: false,
     tomato: false,
@@ -91,8 +91,8 @@ export default function Form() {
 
   const [error, setError] = useState({
     pizzatype: "",
-    pizzasize: "none",
-    doughsize: "none",
+    pizzasize: "",
+    doughsize: "",
     cheddar: false,
     pepper: false,
     tomato: false,
@@ -155,8 +155,8 @@ export default function Form() {
         setAlreadyOrdered(response.data);
         setForm({
           pizzatype: "",
-          pizzasize: "none",
-          doughsize: "none",
+          pizzasize: "",
+          doughsize: "",
           cheddar: false,
           pepper: false,
           tomato: false,
@@ -199,6 +199,7 @@ export default function Form() {
                   name="pizzatype"
                   value={form.pizzatype}
                   onChange={handleChange}
+                  class="select"
                 >
                   <option value="">Seçiniz</option>
                   <option value="margarita">Margarita</option>
@@ -210,219 +211,241 @@ export default function Form() {
               </label>
               {error.pizzatype && <p>{error.pizzatype}</p>}
             </div>
-            <div className="pizza_size">
-              <h3>Pizza Boyutunu seçin</h3>
-              <label>
-                <input
-                  type="radio"
-                  value="small"
-                  name="pizzasize"
-                  checked={form.pizzasize === "small"}
-                  onChange={handleChange}
-                />{" "}
-                Küçük Boy
-              </label>
-              <label>
-                <input
-                  type="radio"
-                  value="medium"
-                  name="pizzasize"
-                  checked={form.pizzasize === "medium"}
-                  onChange={handleChange}
-                />{" "}
-                Orta Boy
-              </label>
-              <label>
-                <input
-                  type="radio"
-                  value="big"
-                  name="pizzasize"
-                  checked={form.pizzasize === "big"}
-                  onChange={handleChange}
-                />{" "}
-                Büyük Boy
-              </label>
-              {error.pizzasize && <p>{error.pizzasize}</p>}
-            </div>
-            <div className="dough_size">
-              <label>
-                <input
-                  type="radio"
-                  value="thin"
-                  name="doughsize"
-                  checked={form.doughsize === "thin"}
-                  onChange={handleChange}
-                />{" "}
-                İnce
-              </label>
-              <label>
-                <input
-                  type="radio"
-                  value="medium"
-                  name="doughsize"
-                  checked={form.doughsize === "medium"}
-                  onChange={handleChange}
-                />{" "}
-                Orta
-              </label>
-              <label>
-                <input
-                  type="radio"
-                  value="thick"
-                  name="doughsize"
-                  checked={form.doughsize === "thick"}
-                  onChange={handleChange}
-                />{" "}
-                Kalın
-              </label>
-              {error.doughsize && <p>{error.doughsize}</p>}
-              <h3>Ek Malzemeleri seçin</h3>
+            <div className="radio">
+              <div className="pizza_size">
+                <h3>Pizza Boyutu</h3>
+                <label>
+                  <input
+                    type="radio"
+                    value="small"
+                    name="pizzasize"
+                    checked={form.pizzasize === "small"}
+                    onChange={handleChange}
+                  />{" "}
+                  Küçük Boy
+                </label>
+                <label>
+                  <input
+                    type="radio"
+                    value="medium"
+                    name="pizzasize"
+                    checked={form.pizzasize === "medium"}
+                    onChange={handleChange}
+                  />{" "}
+                  Orta Boy
+                </label>
+                <label>
+                  <input
+                    type="radio"
+                    value="big"
+                    name="pizzasize"
+                    checked={form.pizzasize === "big"}
+                    onChange={handleChange}
+                  />{" "}
+                  Büyük Boy
+                </label>
+                {error.pizzasize && <p>{error.pizzasize}</p>}
+              </div>
+              <div className="dough_size">
+                <h3>Hamur Kalınlığı</h3>
+
+                <label>
+                  <input
+                    type="radio"
+                    value="thin"
+                    name="doughsize"
+                    checked={form.doughsize === "thin"}
+                    onChange={handleChange}
+                  />{" "}
+                  İnce
+                </label>
+                <label>
+                  <input
+                    type="radio"
+                    value="medium"
+                    name="doughsize"
+                    checked={form.doughsize === "medium"}
+                    onChange={handleChange}
+                  />{" "}
+                  Orta
+                </label>
+                <label>
+                  <input
+                    type="radio"
+                    value="thick"
+                    name="doughsize"
+                    checked={form.doughsize === "thick"}
+                    onChange={handleChange}
+                  />{" "}
+                  Kalın
+                </label>
+                {error.doughsize && <p>{error.doughsize}</p>}
+              </div>
             </div>
             <div className="ingredients">
-              <label>
-                <input
-                  type="checkbox"
-                  name="cheddar"
-                  value={form.cheddar}
-                  onChange={handleChange}
-                />{" "}
-                Cheddar Peyniri
-              </label>
-              <label>
-                <input
-                  type="checkbox"
-                  name="pepper"
-                  value={form.pepper}
-                  onChange={handleChange}
-                />{" "}
-                Kapya Biber
-              </label>
-              <label>
-                <input
-                  type="checkbox"
-                  name="tomato"
-                  value={form.tomato}
-                  onChange={handleChange}
-                />{" "}
-                Domates
-              </label>
-              <label>
-                <input
-                  type="checkbox"
-                  name="sucuk"
-                  value={form.sucuk}
-                  onChange={handleChange}
-                />{" "}
-                Sucuk
-              </label>
-              <label>
-                <input
-                  type="checkbox"
-                  name="onion"
-                  value={form.onion}
-                  onChange={handleChange}
-                />{" "}
-                Soğan
-              </label>
-              <label>
-                <input
-                  type="checkbox"
-                  name="chicken"
-                  value={form.chicken}
-                  onChange={handleChange}
-                />{" "}
-                Tavuk Izgara
-              </label>
-              <label>
-                <input
-                  type="checkbox"
-                  name="corn"
-                  value={form.corn}
-                  onChange={handleChange}
-                />{" "}
-                Mısır
-              </label>
-              <label>
-                <input
-                  type="checkbox"
-                  name="pineapple"
-                  value={form.pineapple}
-                  onChange={handleChange}
-                />{" "}
-                Ananas
-              </label>
-              <label>
-                <input
-                  type="checkbox"
-                  name="courgette"
-                  value={form.courgette}
-                  onChange={handleChange}
-                />{" "}
-                Kabak
-              </label>
-              <label>
-                <input
-                  type="checkbox"
-                  name="mushroom"
-                  value={form.mushroom}
-                  onChange={handleChange}
-                />{" "}
-                Mantar
-              </label>
-              <label>
-                <input
-                  type="checkbox"
-                  name="tuna"
-                  value={form.tuna}
-                  onChange={handleChange}
-                />{" "}
-                Ton Balığı
-              </label>
-              <label>
-                <input
-                  type="checkbox"
-                  name="mint"
-                  value={form.mint}
-                  onChange={handleChange}
-                />{" "}
-                Nane
-              </label>
-              <label>
-                <input
-                  type="checkbox"
-                  name="oregano"
-                  value={form.oregano}
-                  onChange={handleChange}
-                />{" "}
-                Kekik
-              </label>
-              <label>
-                <input
-                  type="checkbox"
-                  name="sausage"
-                  value={form.sausage}
-                  onChange={handleChange}
-                />{" "}
-                Sausage
-              </label>
-              <label>
-                <input
-                  type="checkbox"
-                  name="ham"
-                  value={form.ham}
-                  onChange={handleChange}
-                />{" "}
-                Jambon
-              </label>
-              <label>
-                <input
-                  type="checkbox"
-                  name="olive"
-                  value={form.olive}
-                  onChange={handleChange}
-                />{" "}
-                Zeytin
-              </label>
+              <h3 className="headingIngredients">Ek Malzemeleri Seçiniz</h3>
+              <div className="ingredientsContent">
+                <label>
+                  <input
+                    type="checkbox"
+                    name="cheddar"
+                    value={form.cheddar}
+                    onChange={handleChange}
+                    class="check"
+                  />{" "}
+                  Cheddar
+                </label>
+                <label>
+                  <input
+                    type="checkbox"
+                    name="pepper"
+                    value={form.pepper}
+                    onChange={handleChange}
+                    class="check"
+                  />{" "}
+                  Biber
+                </label>
+                <label>
+                  <input
+                    type="checkbox"
+                    name="tomato"
+                    value={form.tomato}
+                    onChange={handleChange}
+                    class="check"
+                  />{" "}
+                  Domates
+                </label>
+                <label>
+                  <input
+                    type="checkbox"
+                    name="sucuk"
+                    value={form.sucuk}
+                    onChange={handleChange}
+                    class="check"
+                  />{" "}
+                  Sucuk
+                </label>
+                <label>
+                  <input
+                    type="checkbox"
+                    name="onion"
+                    value={form.onion}
+                    onChange={handleChange}
+                    class="check"
+                  />{" "}
+                  Soğan
+                </label>
+                <label>
+                  <input
+                    type="checkbox"
+                    name="chicken"
+                    value={form.chicken}
+                    onChange={handleChange}
+                    class="check"
+                  />{" "}
+                  Tavuk
+                </label>
+                <label>
+                  <input
+                    type="checkbox"
+                    name="corn"
+                    value={form.corn}
+                    onChange={handleChange}
+                    class="check"
+                  />{" "}
+                  Mısır
+                </label>
+                <label>
+                  <input
+                    type="checkbox"
+                    name="pineapple"
+                    value={form.pineapple}
+                    onChange={handleChange}
+                    class="check"
+                  />{" "}
+                  Ananas
+                </label>
+                <label>
+                  <input
+                    type="checkbox"
+                    name="courgette"
+                    value={form.courgette}
+                    onChange={handleChange}
+                    class="check"
+                  />{" "}
+                  Kabak
+                </label>
+                <label>
+                  <input
+                    type="checkbox"
+                    name="mushroom"
+                    value={form.mushroom}
+                    onChange={handleChange}
+                    class="check"
+                  />{" "}
+                  Mantar
+                </label>
+                <label>
+                  <input
+                    type="checkbox"
+                    name="tuna"
+                    value={form.tuna}
+                    onChange={handleChange}
+                    class="check"
+                  />{" "}
+                  Ton
+                </label>
+                <label>
+                  <input
+                    type="checkbox"
+                    name="mint"
+                    value={form.mint}
+                    onChange={handleChange}
+                    class="check"
+                  />{" "}
+                  Nane
+                </label>
+                <label>
+                  <input
+                    type="checkbox"
+                    name="oregano"
+                    value={form.oregano}
+                    onChange={handleChange}
+                    class="check"
+                  />{" "}
+                  Kekik
+                </label>
+                <label>
+                  <input
+                    type="checkbox"
+                    name="sausage"
+                    value={form.sausage}
+                    onChange={handleChange}
+                    class="check"
+                  />{" "}
+                  Sosis
+                </label>
+                <label>
+                  <input
+                    type="checkbox"
+                    name="ham"
+                    value={form.ham}
+                    onChange={handleChange}
+                    class="check"
+                  />{" "}
+                  Jambon
+                </label>
+                <label>
+                  <input
+                    type="checkbox"
+                    name="olive"
+                    value={form.olive}
+                    onChange={handleChange}
+                    class="check"
+                  />{" "}
+                  Zeytin
+                </label>{" "}
+              </div>
             </div>
             <div className="quantity">
               <h3>Sipariş Adedini Seçiniz</h3>
@@ -438,11 +461,13 @@ export default function Form() {
                 />
               </label>
               {error.quantity && <p>{error.quantity}</p>}
-              <h3>İletişim Bilgilerinizi Giriniz</h3>
             </div>
             <div className="contact">
+              <h3>İletişim Bilgilerinizi Giriniz</h3>
+
               <label>
                 İsim Soyisim:
+                <br />
                 <input
                   type="text"
                   name="namesurname"
@@ -454,6 +479,7 @@ export default function Form() {
 
               <label>
                 Adres:
+                <br />
                 <input
                   type="text"
                   name="address"
@@ -465,6 +491,7 @@ export default function Form() {
 
               <label>
                 Email:
+                <br />
                 <input
                   type="email"
                   name="email"

@@ -12,9 +12,6 @@ export default function Order() {
           <button className="secondButton">ANASAYFA</button>
         </Link>
         <h1 className="mainHeading">YEMEK DÜNYASI</h1>
-        <Link to="/pizza">
-          <button className="secondButton">SİPARİŞ VER</button>
-        </Link>
       </div>
       <div className="mobileAppPart">
         <Mobile />

@@ -81,10 +81,24 @@ h3 {
   color: #eedada;
 }
 
-.ingredients {
+.ingredientsContent {
   flex-wrap: wrap;
   display: flex;
-  width: 50%;
+  width: 100%;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.ingredients {
+  width: 50rem;
+  display: flex;
+  flex-direction: column;
+}
+label {
+  padding: 15px;
+}
+.check {
+  width: 2rem;
+  height: 2rem;
 }
 .formContent {
   border: 2px solid red;
@@ -93,8 +107,75 @@ h3 {
   justify-content: center;
   align-items: center;
   font-family: "Francois One", sans-serif;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
 }
-input {
-  width: 80%;
+
+.contact {
+  display: flex;
+  flex-direction: column;
+}
+.contact input {
+  width: 46rem;
+  padding: 1rem;
+  border-radius: 5px;
+}
+.order_note input {
+  width: 46rem;
+  padding: 1rem;
+  border-radius: 5px;
+}
+.quantity input {
+  width: 46rem;
+  padding: 1rem;
+  border-radius: 5px;
+}
+p {
+  color: #850303;
+  padding-top: 1rem;
+}
+.dough_size {
+  width: 46rem;
+  display: flex;
+  flex-direction: column;
+}
+.radio {
+  display: flex;
+  width: 46rem;
+  flex-direction: row;
+}
+.pizza_size {
+  max-width: 40%;
+  display: flex;
+  flex-direction: column;
+}
+.dough_size {
+  max-width: 40%;
+  display: flex;
+  flex-direction: column;
+}
+input[type="radio"] {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+}
+
+select option {
+  font-family: "Francois One", sans-serif;
+  font-size: 1.5rem;
+  padding: 15px;
+}
+.pizza_type {
+  display: flex;
+  flex-direction: row;
+}
+.select {
+  width: 410px;
+  height: 50px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  color: #000000;
+  font-size: 1.5rem;
+  padding: 5px;
+  font-family: "Francois One", sans-serif;
 }
