@@ -30,3 +30,11 @@ h5 {
   font-size: 1.2rem;
   margin-top: 3rem;
 }
+.formPart {
+  background-color: #faf7f2;
+  max-width: 90%;
+  margin-top: 10rem;
+  margin-bottom: 10rem;
+  padding: 5px;
+  border-radius: 15px;
+}

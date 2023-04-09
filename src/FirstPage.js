@@ -10,7 +10,7 @@ export default function FirstPage() {
           <div className="firstPageContainer">
             <div className="heading">
               <h1 className="mainHeadingFirst">YEMEK DÜNYASI</h1>
-              <h5>BİR DİLİM LEZZET BİNLERCE MUTLULUK :)</h5>
+              <h5 className="happy">BİR DİLİM LEZZET BİNLERCE MUTLULUK :)</h5>
               <Link to="/mainpage" id="order-pizza">
                 <button className="firstButton">MUTLU OL!</button>
               </Link>
