@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Order.css";
+import Mobile from "./Mobile";
+import Form from "./Form";
 export default function Order() {
   return (
     <div className="orderPart">
@@ -8,11 +10,17 @@ export default function Order() {
         <Link to="/mainpage">
           <button className="secondButton">ANASAYFA</button>
         </Link>
-        <Link to="/orderpizza">
+        <h1 className="mainHeading">YEMEK DÜNYASI</h1>
+        <Link to="/pizza">
           <button className="secondButton">SİPARİŞ VER</button>
         </Link>
       </div>
-      <form></form>
+      <div className="mobileAppPart">
+        <Mobile />
+      </div>
+      <div className="formPart">
+        <Form />
+      </div>
     </div>
   );
 }

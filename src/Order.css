@@ -1,2 +1,32 @@
-.orderPart {
+.mobilePart {
+  display: flex;
+  justify-content: center;
+  background-color: #850303;
+}
+.mobile {
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.mobileText {
+  color: #faf7f2;
+  font-family: "Russo One", sans-serif;
+  letter-spacing: 5px;
+  word-wrap: break-word;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+}
+h5 {
+  color: #faf7f2;
+  font-family: "Russo One", sans-serif;
+  letter-spacing: 5px;
+  word-wrap: break-word;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  margin-top: 3rem;
 }

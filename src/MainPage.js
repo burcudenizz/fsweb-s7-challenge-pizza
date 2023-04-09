@@ -50,7 +50,8 @@ export default function MainPage() {
               <Link to="/mainpage">
                 <button className="secondButton">ANASAYFA</button>
               </Link>
-              <Link to="/orderpizza">
+              <h1 className="mainHeading">YEMEK DÜNYASI</h1>
+              <Link to="/pizza">
                 <button className="secondButton">SİPARİŞ VER</button>
               </Link>
             </div>
@@ -60,7 +61,7 @@ export default function MainPage() {
                 alt="pizza"
                 className="pizzaImg"
               />
-              <Link to="/orderpizza">
+              <Link to="/pizza">
                 <div className="textPart">
                   <h1>
                     Bir Dilim Pizzadan Başka, İki Dilim Pizza Mutlu Eder...
@@ -77,16 +78,18 @@ export default function MainPage() {
               </div>
             </div>
             <div className="footerPart">
-              <img
-                alt="map"
-                className="map"
-                src="https://julian.digital/wp-content/uploads/2017/12/istanbul_moves.jpg"
-              />
+              <a href="https://www.google.com/maps">
+                <img
+                  alt="map"
+                  className="map"
+                  src="https://julian.digital/wp-content/uploads/2017/12/istanbul_moves.jpg"
+                />
+              </a>
               <Footer />
             </div>
           </div>
         </Route>
-        <Route exact path="/orderpizza">
+        <Route exact path="/pizza">
           <Order />
         </Route>
       </Switch>

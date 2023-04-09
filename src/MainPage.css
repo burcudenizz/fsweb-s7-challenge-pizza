@@ -6,12 +6,8 @@ body {
   max-width: 100%;
 }
 .menuPart {
-  background-color: rgba(91, 0, 0, 0.7);
-  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
-    rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
-    rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
-    rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
-    rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  background-color: #faf7f2;
+
   width: 100%;
   height: 7vw;
   display: flex;
@@ -23,7 +19,7 @@ body {
   margin-bottom: 5%;
 }
 .textPart {
-  color: #fcfcfc;
+  color: #faf7f2;
   background-color: rgba(238, 218, 218, 0.5);
   padding: 45px;
   position: absolute;
@@ -37,7 +33,7 @@ body {
   transition: 0.7s;
 }
 .textPart:hover {
-  color: rgb(158, 0, 0);
+  color: rgb(206, 40, 41);
 }
 .AdvertsPart img {
   width: 320px;
@@ -52,7 +48,7 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   border-radius: 15px;
-  background-color: rgba(91, 0, 0, 0.5);
+  background-color: #850303;
   box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
     rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
     rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
@@ -63,16 +59,32 @@ body {
   margin: 3vw;
   gap: 15px;
 }
+
+.foodAdverts img:hover {
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.06);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 .blackPart h1 {
-  color: #fcfcfc;
+  color: #faf7f2;
   margin-top: 15px;
-  font-family: "Francois One", sans-serif;
+  font-family: "Russo One", sans-serif;
   font-size: 3rem;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
   text-shadow: 2px 3px #0e0d0d;
 }
 .blackPart p {
-  color: #fcfcfc;
+  color: #faf7f2;
   font-family: "Francois One", sans-serif;
   font-size: 1.5rem;
   letter-spacing: 2px;
@@ -84,46 +96,60 @@ body {
   align-items: flex-start;
 }
 .footerPart {
-  background-color: rgba(91, 0, 0, 0.7);
-  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
-    rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
-    rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
-    rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
-    rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
-  color: #fcfcfc;
+  background-color: #faf7f2;
+  color: black;
   margin-top: 6%;
   width: 100%;
-  height: 250px;
+  height: 29rem;
   display: flex;
   justify-content: space-around;
 }
 .map {
   display: flex;
-  margin: 30px;
-  width: 250px;
-  height: 220px;
+  padding-left: 1rem;
+  padding-top: 5rem;
+  width: 350px;
+  height: 350px;
 }
+
 .footerPart ul {
-  color: #fcfcfc;
+  color: black;
   font-family: "Francois One", sans-serif;
-  font-size: 1.7rem;
+  font-size: 1.8rem;
   letter-spacing: 2px;
   list-style: none;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  gap: 5rem;
   align-items: center;
   margin-top: 15%;
 }
+.logo {
+  width: 40px;
+}
+.logoPart {
+  display: flex;
+  padding-top: 12rem;
+}
+
 .secondButton {
+  background-color: rgb(206, 40, 41);
   padding: 30px;
   border-radius: 5px;
   font-family: "Francois One", sans-serif;
-  font-size: 1.2rem;
+  font-size: 1.6rem;
   transition: 0.7s;
-  border: 1px solid #eedada;
+  border: 1px solid #000000;
   margin-top: 1%;
 }
 .secondButton:hover {
   background-color: #101010;
   color: #eedada;
+}
+.mainHeading {
+  color: rgb(206, 40, 41);
+  font-family: "Russo One", sans-serif;
+  font-size: 3rem;
+  letter-spacing: 2px;
+  text-shadow: 2px 3px #0e0d0d;
 }

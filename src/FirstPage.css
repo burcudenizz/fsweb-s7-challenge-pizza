@@ -3,7 +3,7 @@
   padding: 0;
 }
 body {
-  background-color: rgb(158, 0, 0);
+  background-color: rgb(206, 40, 41);
   display: flex;
 }
 .firstPhoto {
@@ -16,29 +16,30 @@ body {
 }
 .heading {
   text-align: center;
-  color: #eedada;
+  color: #faf7f2;
   margin-top: 3%;
 }
 h5 {
   font-family: "Gloria Hallelujah", cursive;
   font-size: 2rem;
 }
-.heading h1 {
-  font-family: "Francois One", sans-serif;
+.mainHeadingFirst {
+  color: #faf7f2;
+  font-family: "Russo One", sans-serif;
   font-size: 3rem;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
   text-shadow: 2px 3px #0e0d0d;
 }
 .firstButton {
   padding: 30px;
   border-radius: 5px;
   font-family: "Francois One", sans-serif;
-  font-size: 1.2rem;
+  font-size: 1.7rem;
   transition: 0.7s;
-  border: 1px solid #eedada;
+  border: 1px solid #faf7f2;
   margin-top: 1%;
 }
 .firstButton:hover {
   background-color: #101010;
-  color: #eedada;
+  color: #faf7f2;
 }

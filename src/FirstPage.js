@@ -9,9 +9,9 @@ export default function FirstPage() {
         <Route exact path="/">
           <div className="firstPageContainer">
             <div className="heading">
-              <h1>YEMEK DÜNYASI</h1>
+              <h1 className="mainHeadingFirst">YEMEK DÜNYASI</h1>
               <h5>BİR DİLİM LEZZET BİNLERCE MUTLULUK :)</h5>
-              <Link to="/mainpage">
+              <Link to="/mainpage" id="order-pizza">
                 <button className="firstButton">MUTLU OL!</button>
               </Link>
             </div>
