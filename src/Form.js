@@ -503,23 +503,7 @@ export default function Form() {
                 </label>{" "}
               </div>
             </div>
-            <div className="quantity">
-              <h3>
-                Sipariş Adedini Seçiniz <span style={{ color: "red" }}>*</span>
-              </h3>
-              <label>
-                {" "}
-                <input
-                  type="number"
-                  name="quantity"
-                  min="1"
-                  max="5"
-                  value={form.quantity}
-                  onChange={handleChange}
-                />
-              </label>
-              {error.quantity && <p>{error.quantity}</p>}
-            </div>
+
             <div className="contact">
               <h3>
                 İletişim Bilgilerinizi Giriniz{" "}
@@ -577,7 +561,37 @@ export default function Form() {
                 />
               </label>
             </div>
-
+            <div className="lastPart">
+              <div className="quantity">
+                <h3>
+                  Sipariş Adedini Seçiniz{" "}
+                  <span style={{ color: "red" }}>*</span>
+                </h3>
+                <label>
+                  {" "}
+                  <input
+                    type="number"
+                    name="quantity"
+                    min="1"
+                    max="5"
+                    value={form.quantity}
+                    onChange={handleChange}
+                  />
+                </label>
+                {error.quantity && <p>{error.quantity}</p>}
+              </div>
+              <div className="orderSum">
+                <h2>Sipariş Toplamı</h2>
+                <div className="summary1">
+                  <p>Seçimler</p>
+                  <p>50 TL</p>
+                </div>
+                <div className="summary1">
+                  <p>Toplam</p>
+                  <p>150 TL</p>
+                </div>
+              </div>
+            </div>
             <button
               className="order_button"
               type="submit"
