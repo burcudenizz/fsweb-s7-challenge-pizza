@@ -80,7 +80,10 @@ h3 {
   background-color: #101010;
   color: #eedada;
 }
-
+.order_button:disabled {
+  cursor: not-allowed;
+  opacity: 0.3;
+}
 .ingredientsContent {
   flex-wrap: wrap;
   display: flex;

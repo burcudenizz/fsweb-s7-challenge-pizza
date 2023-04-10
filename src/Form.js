@@ -1,11 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import "./Order.css";
 import * as yup from "yup";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import Footer from "./Footer";
-
+import Success from "./Success";
+import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 /* YUP ADIMLARI 
 1.yup kurmak,import etmek,
 2.şema oluşturmak,
@@ -117,7 +117,7 @@ export default function Form() {
   });
 
   const [buttonDisabledMi, setButtonDisabledMi] = useState(true);
-  const [alreadyOrdered, setAlreadyOrdered] = useState(null);
+  const [alreadyOrdered, setAlreadyOrdered] = useState();
 
   const checkFormError = (name, value) => {
     yup
@@ -152,7 +152,7 @@ export default function Form() {
       .post("https://reqres.in/api/users", form)
       .then((response) => {
         console.log(response.data);
-        setAlreadyOrdered(response.data);
+        setAlreadyOrdered([...alreadyOrdered, response.data]);
         setForm({
           pizzatype: "",
           pizzasize: "",
@@ -182,6 +182,12 @@ export default function Form() {
       })
       .catch((err) => console.log(err));
   }
+  const history = useHistory();
+
+  function handleClick() {
+    history.push("/ordersubmit");
+  }
+
   useEffect(() => {
     formSchema.isValid(form).then((valid) => setButtonDisabledMi(!valid));
   }, [form]);
@@ -192,10 +198,13 @@ export default function Form() {
         <form onSubmit={handleSubmit}>
           <div className="formContent">
             <div className="pizza_type">
-              <h3>Pizza Çeşitini Seçiniz</h3>
+              <h3>
+                Pizza Çeşitini Seçiniz <span style={{ color: "red" }}>*</span>
+              </h3>
               <label>
                 {" "}
                 <select
+                  id="type_dropdown"
                   name="pizzatype"
                   value={form.pizzatype}
                   onChange={handleChange}
@@ -213,7 +222,9 @@ export default function Form() {
             </div>
             <div className="radio">
               <div className="pizza_size">
-                <h3>Pizza Boyutu</h3>
+                <h3>
+                  Pizza Boyutu<span style={{ color: "red" }}>*</span>
+                </h3>
                 <label>
                   <input
                     type="radio"
@@ -247,7 +258,9 @@ export default function Form() {
                 {error.pizzasize && <p>{error.pizzasize}</p>}
               </div>
               <div className="dough_size">
-                <h3>Hamur Kalınlığı</h3>
+                <h3>
+                  Hamur Kalınlığı<span style={{ color: "red" }}>*</span>
+                </h3>
 
                 <label>
                   <input
@@ -448,7 +461,9 @@ export default function Form() {
               </div>
             </div>
             <div className="quantity">
-              <h3>Sipariş Adedini Seçiniz</h3>
+              <h3>
+                Sipariş Adedini Seçiniz <span style={{ color: "red" }}>*</span>
+              </h3>
               <label>
                 {" "}
                 <input
@@ -463,7 +478,10 @@ export default function Form() {
               {error.quantity && <p>{error.quantity}</p>}
             </div>
             <div className="contact">
-              <h3>İletişim Bilgilerinizi Giriniz</h3>
+              <h3>
+                İletişim Bilgilerinizi Giriniz{" "}
+                <span style={{ color: "red" }}>*</span>
+              </h3>
 
               <label>
                 İsim Soyisim:
@@ -473,6 +491,7 @@ export default function Form() {
                   name="namesurname"
                   value={form.namesurname}
                   onChange={handleChange}
+                  placeholder="İsim Soyisim"
                 />
               </label>
               {error.namesurname && <p>{error.namesurname}</p>}
@@ -485,6 +504,7 @@ export default function Form() {
                   name="address"
                   value={form.address}
                   onChange={handleChange}
+                  placeholder="Adres"
                 />
               </label>
               {error.address && <p>{error.address}</p>}
@@ -497,6 +517,7 @@ export default function Form() {
                   name="email"
                   value={form.email}
                   onChange={handleChange}
+                  placeholder="Email"
                 />
               </label>
               {error.email && <p>{error.email}</p>}
@@ -509,14 +530,16 @@ export default function Form() {
                   name="ordernote"
                   value={form.ordernote}
                   onChange={handleChange}
+                  placeholder="Sipariş Notunuz"
                 />
               </label>
             </div>
-            <Link to="/ordersubmit" id="order-submit">
+            <Link to="/success" id="order-submit">
               <button
                 className="order_button"
                 type="submit"
                 disabled={buttonDisabledMi}
+                onClick={handleClick}
               >
                 SİPARİŞİ GÖNDER
               </button>
