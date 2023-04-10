@@ -3,8 +3,6 @@ import "./Order.css";
 import * as yup from "yup";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import Success from "./Success";
-import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 /* YUP ADIMLARI 
 1.yup kurmak,import etmek,
@@ -182,15 +180,15 @@ export default function Form() {
       })
       .catch((err) => console.log(err));
   }
-  const history = useHistory();
-
-  function handleClick() {
-    history.push("/ordersubmit");
-  }
 
   useEffect(() => {
     formSchema.isValid(form).then((valid) => setButtonDisabledMi(!valid));
   }, [form]);
+
+  const history = useHistory();
+  const toSuccessPage = () => {
+    history.push("/success");
+  };
   return (
     <>
       <div className="formPart">
@@ -534,16 +532,15 @@ export default function Form() {
                 />
               </label>
             </div>
-            <Link to="/success" id="order-submit">
-              <button
-                className="order_button"
-                type="submit"
-                disabled={buttonDisabledMi}
-                onClick={handleClick}
-              >
-                SİPARİŞİ GÖNDER
-              </button>
-            </Link>
+
+            <button
+              className="order_button"
+              type="submit"
+              disabled={buttonDisabledMi}
+              onClick={toSuccessPage}
+            >
+              SİPARİŞİ GÖNDER
+            </button>
           </div>
         </form>
       </div>

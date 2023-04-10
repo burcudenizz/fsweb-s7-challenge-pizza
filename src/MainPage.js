@@ -2,8 +2,8 @@ import React from "react";
 import "./MainPage.css";
 import FoodAdverts from "./FoodAdverts";
 import Footer from "./Footer";
-import Order from "./Order";
-import { BrowserRouter, Route, Link, Switch } from "react-router-dom";
+import { useHistory } from "react-router-dom";
+
 const foodAdverts = [
   {
     image: "https://images.deliveryhero.io/image/fd-tr/LH/t5vx-hero.jpg",
@@ -41,58 +41,57 @@ const foodAdverts = [
   },
 ];
 export default function MainPage() {
+  const history = useHistory();
+  const toOrderPage = () => {
+    history.push("/pizza");
+  };
+  const toMainPage = () => {
+    history.push("/mainpage");
+  };
   return (
-    <BrowserRouter>
-      <Switch>
-        <Route exact path="/mainpage">
-          <div className="MainPageContainer">
-            <div className="menuPart">
-              <Link to="/mainpage">
-                <button className="secondButton">ANASAYFA</button>
-              </Link>
-              <h1 className="mainHeading">YEMEK DÜNYASI</h1>
-              <Link to="/pizza">
-                <button className="secondButton">SİPARİŞ VER</button>
-              </Link>
-            </div>
-            <div className="pizzaPart">
-              <img
-                src="https://i.pinimg.com/originals/a3/e0/6c/a3e06c8f7b389ecacdbcd59f2b29fc17.jpg"
-                alt="pizza"
-                className="pizzaImg"
-              />
-              <Link to="/pizza">
-                <div className="textPart">
-                  <h1>
-                    Bir Dilim Pizzadan Başka, İki Dilim Pizza Mutlu Eder...
-                  </h1>
-                </div>
-              </Link>
-            </div>
-            <div className="blackPart">
-              <h1>Seçenekler</h1>
-              <div className="AdvertsPart">
-                {foodAdverts.map((event) => (
-                  <FoodAdverts foodAdverts={event} />
-                ))}
-              </div>
-            </div>
-            <div className="footerPart">
-              <a href="https://www.google.com/maps">
-                <img
-                  alt="map"
-                  className="map"
-                  src="https://julian.digital/wp-content/uploads/2017/12/istanbul_moves.jpg"
-                />
-              </a>
-              <Footer />
-            </div>
-          </div>
-        </Route>
-        <Route exact path="/pizza">
-          <Order />
-        </Route>
-      </Switch>
-    </BrowserRouter>
+    <div className="MainPageContainer">
+      <div className="menuPart">
+        <button className="secondButton" onClick={toMainPage}>
+          ANASAYFA
+        </button>
+
+        <h1 className="mainHeading">YEMEK DÜNYASI</h1>
+
+        <button className="secondButton" onClick={toOrderPage}>
+          SİPARİŞ VER
+        </button>
+      </div>
+      <div className="pizzaPart">
+        <img
+          src="https://i.pinimg.com/originals/a3/e0/6c/a3e06c8f7b389ecacdbcd59f2b29fc17.jpg"
+          alt="pizza"
+          className="pizzaImg"
+        />
+
+        <div className="textPart">
+          <h1 onClick={toOrderPage}>
+            Bir Dilim Pizzadan Başka, İki Dilim Pizza Mutlu Eder...
+          </h1>
+        </div>
+      </div>
+      <div className="blackPart">
+        <h1>Seçenekler</h1>
+        <div className="AdvertsPart">
+          {foodAdverts.map((event) => (
+            <FoodAdverts foodAdverts={event} />
+          ))}
+        </div>
+      </div>
+      <div className="footerPart">
+        <a href="https://www.google.com/maps">
+          <img
+            alt="map"
+            className="map"
+            src="https://julian.digital/wp-content/uploads/2017/12/istanbul_moves.jpg"
+          />
+        </a>
+        <Footer />
+      </div>
+    </div>
   );
 }
