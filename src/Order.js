@@ -18,7 +18,14 @@ export default function Order() {
           ANASAYFA
         </button>
 
-        <h1 className="mainHeading">YEMEK DÜNYASI</h1>
+        <h1 className="mainHeading">
+          {" "}
+          <img
+            src="https://seeklogo.com/images/P/pizza-logo-42816D88BE-seeklogo.com.png"
+            style={{ width: "100px" }}
+          />
+          PİZZA DÜNYASI
+        </h1>
       </div>
 
       <div className="mobileAppPart">
@@ -29,7 +36,7 @@ export default function Order() {
         <Form />
       </div>
 
-      <div className="footerPart">
+      <div className="footerPart2">
         <a href="https://www.google.com/maps">
           <img
             alt="map"

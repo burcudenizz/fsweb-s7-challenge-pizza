@@ -10,7 +10,13 @@ export default function FirstPage() {
   return (
     <div className="firstPageContainer">
       <div className="heading">
-        <h1 className="mainHeadingFirst">YEMEK DÜNYASI</h1>
+        <h1 className="mainHeadingFirst">
+          <img
+            src="https://seeklogo.com/images/P/pizza-logo-42816D88BE-seeklogo.com.png"
+            style={{ width: "100px" }}
+          />
+          PİZZA DÜNYASI
+        </h1>
         <h5 className="happy">BİR DİLİM LEZZET BİNLERCE MUTLULUK :)</h5>
         <button className="firstButton" onClick={toMainPage}>
           MUTLU OL!

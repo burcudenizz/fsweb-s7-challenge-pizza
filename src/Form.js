@@ -1,6 +1,7 @@
 import React from "react";
 import "./Order.css";
 import * as yup from "yup";
+import Success from "./Success";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
@@ -115,7 +116,32 @@ export default function Form() {
   });
 
   const [buttonDisabledMi, setButtonDisabledMi] = useState(true);
-  const [alreadyOrdered, setAlreadyOrdered] = useState();
+  const [alreadyOrdered, setAlreadyOrdered] = useState({
+    pizzatype: "",
+    pizzasize: "",
+    doughsize: "",
+    cheddar: false,
+    pepper: false,
+    tomato: false,
+    sucuk: false,
+    onion: false,
+    chicken: false,
+    corn: false,
+    pineapple: false,
+    courgette: false,
+    mushroom: false,
+    tuna: false,
+    mint: false,
+    oregano: false,
+    sausage: false,
+    ham: false,
+    olive: false,
+    quantity: "",
+    namesurname: "",
+    address: "",
+    email: "",
+    ordernote: "",
+  });
 
   const checkFormError = (name, value) => {
     yup
@@ -147,7 +173,7 @@ export default function Form() {
   function handleSubmit(event) {
     event.preventDefault();
     axios
-      .post("https://reqres.in/api/users", form)
+      .post("https://reqres.in/api/users?page=2 ", form)
       .then((response) => {
         console.log(response.data);
         setAlreadyOrdered([...alreadyOrdered, response.data]);
@@ -193,6 +219,25 @@ export default function Form() {
     <>
       <div className="formPart">
         <h1 className="formHeading">SİPARİŞİNİZİ OLUŞTURUN</h1>
+        <div className="positionAbsolute">
+          <h2 className="pizzaHeading">Position Absolute Acı Pizza</h2>
+          <div className="money">
+            <h3 className="bold">85,50 ₺</h3>
+
+            <p className="thin">4.9</p>
+            <p className="thin">(200)</p>
+          </div>
+          <p className="parag">
+            Frontend Dev olarak hala position:absolute kullanıyorsan bu çok acı
+            pizza tam sana göre. Pizza, domates, peynir ve genellikle çeşitli
+            diğer malzemelerle kaplanmış, daha sonra geleneksel olarak odun
+            ateşinde bir fırında yüksek sıcaklıkta pişirilen, genellikle
+            yuvarlak, düzleştirilmiş mayalı buğday bazlı hamurdan oluşan İtalyan
+            kökenli lezzetli bir yemektir.. Küçük bir pizzaya bazen pizzetta
+            denir.
+          </p>
+          <hr size="3" />
+        </div>
         <form onSubmit={handleSubmit}>
           <div className="formContent">
             <div className="pizza_type">
@@ -206,7 +251,7 @@ export default function Form() {
                   name="pizzatype"
                   value={form.pizzatype}
                   onChange={handleChange}
-                  class="select"
+                  className="select"
                 >
                   <option value="">Seçiniz</option>
                   <option value="margarita">Margarita</option>
@@ -302,7 +347,7 @@ export default function Form() {
                     name="cheddar"
                     value={form.cheddar}
                     onChange={handleChange}
-                    class="check"
+                    className="check"
                   />{" "}
                   Cheddar
                 </label>
@@ -312,7 +357,7 @@ export default function Form() {
                     name="pepper"
                     value={form.pepper}
                     onChange={handleChange}
-                    class="check"
+                    className="check"
                   />{" "}
                   Biber
                 </label>
@@ -322,7 +367,7 @@ export default function Form() {
                     name="tomato"
                     value={form.tomato}
                     onChange={handleChange}
-                    class="check"
+                    className="check"
                   />{" "}
                   Domates
                 </label>
@@ -332,7 +377,7 @@ export default function Form() {
                     name="sucuk"
                     value={form.sucuk}
                     onChange={handleChange}
-                    class="check"
+                    className="check"
                   />{" "}
                   Sucuk
                 </label>
@@ -342,7 +387,7 @@ export default function Form() {
                     name="onion"
                     value={form.onion}
                     onChange={handleChange}
-                    class="check"
+                    className="check"
                   />{" "}
                   Soğan
                 </label>
@@ -352,7 +397,7 @@ export default function Form() {
                     name="chicken"
                     value={form.chicken}
                     onChange={handleChange}
-                    class="check"
+                    className="check"
                   />{" "}
                   Tavuk
                 </label>
@@ -362,7 +407,7 @@ export default function Form() {
                     name="corn"
                     value={form.corn}
                     onChange={handleChange}
-                    class="check"
+                    className="check"
                   />{" "}
                   Mısır
                 </label>
@@ -372,7 +417,7 @@ export default function Form() {
                     name="pineapple"
                     value={form.pineapple}
                     onChange={handleChange}
-                    class="check"
+                    className="check"
                   />{" "}
                   Ananas
                 </label>
@@ -382,7 +427,7 @@ export default function Form() {
                     name="courgette"
                     value={form.courgette}
                     onChange={handleChange}
-                    class="check"
+                    className="check"
                   />{" "}
                   Kabak
                 </label>
@@ -392,7 +437,7 @@ export default function Form() {
                     name="mushroom"
                     value={form.mushroom}
                     onChange={handleChange}
-                    class="check"
+                    className="check"
                   />{" "}
                   Mantar
                 </label>
@@ -402,7 +447,7 @@ export default function Form() {
                     name="tuna"
                     value={form.tuna}
                     onChange={handleChange}
-                    class="check"
+                    className="check"
                   />{" "}
                   Ton
                 </label>
@@ -412,7 +457,7 @@ export default function Form() {
                     name="mint"
                     value={form.mint}
                     onChange={handleChange}
-                    class="check"
+                    className="check"
                   />{" "}
                   Nane
                 </label>
@@ -422,7 +467,7 @@ export default function Form() {
                     name="oregano"
                     value={form.oregano}
                     onChange={handleChange}
-                    class="check"
+                    className="check"
                   />{" "}
                   Kekik
                 </label>
@@ -432,7 +477,7 @@ export default function Form() {
                     name="sausage"
                     value={form.sausage}
                     onChange={handleChange}
-                    class="check"
+                    className="check"
                   />{" "}
                   Sosis
                 </label>
@@ -442,7 +487,7 @@ export default function Form() {
                     name="ham"
                     value={form.ham}
                     onChange={handleChange}
-                    class="check"
+                    className="check"
                   />{" "}
                   Jambon
                 </label>
@@ -452,7 +497,7 @@ export default function Form() {
                     name="olive"
                     value={form.olive}
                     onChange={handleChange}
-                    class="check"
+                    className="check"
                   />{" "}
                   Zeytin
                 </label>{" "}
@@ -543,6 +588,7 @@ export default function Form() {
             </button>
           </div>
         </form>
+        {console.log(form)}
       </div>
     </>
   );

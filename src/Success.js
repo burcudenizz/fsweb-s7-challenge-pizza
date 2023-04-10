@@ -5,7 +5,7 @@ export default function Success(props) {
   console.log(alreadyOrdered);
   return (
     <div className="successOrder">
-      <div>aaaa</div>
+      <p className="congrats">TEBRİKLER ! SİPARİŞİNİZ ALINDI</p>
     </div>
   );
 }

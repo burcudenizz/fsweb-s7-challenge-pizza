@@ -32,15 +32,9 @@ h5 {
 }
 .formPart {
   background-color: #faf7f2;
-  max-width: 70%;
-  margin-top: 7rem;
-  margin-bottom: 7rem;
+  max-width: 100%;
   padding-top: 5rem;
   padding-bottom: 5rem;
-  border-radius: 15px;
-  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
-    rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
-    rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
 }
 
 .formPart {
@@ -77,8 +71,7 @@ h3 {
   margin-top: 5rem;
 }
 .order_button:hover {
-  background-color: #101010;
-  color: #eedada;
+  background-color: #fdc913;
 }
 .order_button:disabled {
   cursor: not-allowed;
@@ -111,6 +104,7 @@ label {
   align-items: center;
   font-family: "Francois One", sans-serif;
   font-size: 1.5rem;
+  max-width: 100%;
 }
 
 .contact {
@@ -181,4 +175,65 @@ select option {
   font-size: 1.5rem;
   padding: 5px;
   font-family: "Francois One", sans-serif;
+}
+
+.footerPart2 {
+  background-color: #850303;
+  color: black;
+
+  width: 100%;
+  height: 29rem;
+  display: flex;
+  justify-content: space-around;
+}
+.footerPart2 ul {
+  color: black;
+  font-family: "Francois One", sans-serif;
+  font-size: 1.8rem;
+  letter-spacing: 2px;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  gap: 5rem;
+  align-items: center;
+  margin-top: 15%;
+}
+/* 
+değişebilir */
+
+.congrats {
+  color: #faf7f2;
+  font-family: "Gloria Hallelujah", cursive;
+  font-size: 4rem;
+  align-items: center;
+  justify-content: center;
+}
+.successOrder {
+  display: flex;
+}
+.parag {
+  font-family: "Francois One", sans-serif;
+  font-size: 1.6rem;
+  color: #000000;
+  padding-bottom: 2rem;
+}
+.positionAbsolute {
+  max-width: 58%;
+  margin-bottom: 2rem;
+}
+.money {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  word-wrap: break-word;
+}
+.thin {
+  color: #878787;
+  font-size: 1.5rem;
+}
+.pizzaHeading {
+  font-family: "Francois One", sans-serif;
+  font-size: 2.1rem;
+  letter-spacing: 2px;
 }

@@ -55,7 +55,14 @@ export default function MainPage() {
           ANASAYFA
         </button>
 
-        <h1 className="mainHeading">YEMEK DÜNYASI</h1>
+        <h1 className="mainHeading">
+          {" "}
+          <img
+            src="https://seeklogo.com/images/P/pizza-logo-42816D88BE-seeklogo.com.png"
+            style={{ width: "100px" }}
+          />
+          PİZZA DÜNYASI
+        </h1>
 
         <button className="secondButton" onClick={toOrderPage}>
           SİPARİŞ VER

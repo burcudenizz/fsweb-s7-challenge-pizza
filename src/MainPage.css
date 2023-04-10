@@ -33,7 +33,7 @@ body {
   transition: 0.7s;
 }
 .textPart:hover {
-  color: rgb(206, 40, 41);
+  color: #292929;
 }
 .AdvertsPart img {
   width: 320px;
@@ -135,16 +135,15 @@ body {
 .secondButton {
   background-color: rgb(206, 40, 41);
   padding: 30px;
-  border-radius: 5px;
+  border-radius: 25px;
   font-family: "Francois One", sans-serif;
   font-size: 1.6rem;
   transition: 0.7s;
-  border: 1px solid #000000;
   margin-top: 1%;
+  border: 1px solid #faf7f2;
 }
 .secondButton:hover {
-  background-color: #101010;
-  color: #eedada;
+  background-color: #fdc913;
 }
 .mainHeading {
   color: rgb(206, 40, 41);
