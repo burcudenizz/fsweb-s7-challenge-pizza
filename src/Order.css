@@ -69,6 +69,7 @@ h3 {
   margin-top: 1%;
   color: #000000;
   margin-top: 5rem;
+  cursor: pointer;
 }
 .order_button:hover {
   background-color: #fdc913;

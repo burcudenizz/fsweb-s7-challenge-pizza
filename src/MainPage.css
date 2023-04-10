@@ -141,6 +141,7 @@ body {
   transition: 0.7s;
   margin-top: 1%;
   border: 1px solid #faf7f2;
+  cursor: pointer;
 }
 .secondButton:hover {
   background-color: #fdc913;
