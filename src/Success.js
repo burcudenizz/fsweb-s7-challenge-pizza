@@ -1,12 +1,19 @@
 import React from "react";
-
+import { useHistory } from "react-router-dom";
 export default function Success(props) {
   const { alreadyOrdered } = props;
   console.log(alreadyOrdered);
+  const history = useHistory();
+  const toMainPage = () => {
+    history.push("/mainpage");
+  };
   return (
     <>
       <div className="successOrder">
         <div className="heading">
+          <button className="secondButton" onClick={toMainPage}>
+            ANASAYFAYA DÖN
+          </button>
           <h1 className="mainHeadingFirst">
             <img
               src="https://seeklogo.com/images/P/pizza-logo-42816D88BE-seeklogo.com.png"

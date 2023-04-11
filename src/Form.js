@@ -116,32 +116,7 @@ export default function Form() {
   });
 
   const [buttonDisabledMi, setButtonDisabledMi] = useState(true);
-  const [alreadyOrdered, setAlreadyOrdered] = useState({
-    pizzatype: "",
-    pizzasize: "",
-    doughsize: "",
-    cheddar: false,
-    pepper: false,
-    tomato: false,
-    sucuk: false,
-    onion: false,
-    chicken: false,
-    corn: false,
-    pineapple: false,
-    courgette: false,
-    mushroom: false,
-    tuna: false,
-    mint: false,
-    oregano: false,
-    sausage: false,
-    ham: false,
-    olive: false,
-    quantity: "",
-    namesurname: "",
-    address: "",
-    email: "",
-    ordernote: "",
-  });
+  const [alreadyOrdered, setAlreadyOrdered] = useState([]);
 
   const checkFormError = (name, value) => {
     yup

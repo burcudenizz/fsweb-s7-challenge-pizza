@@ -78,14 +78,16 @@ body {
 .blackPart h1 {
   color: #faf7f2;
   margin-top: 15px;
-  font-family: "Russo One", sans-serif;
+  font-family: "Barlow", sans-serif;
+  font-weight: bold;
   font-size: 3rem;
   letter-spacing: 2px;
   text-shadow: 2px 3px #0e0d0d;
 }
 .blackPart p {
   color: #faf7f2;
-  font-family: "Francois One", sans-serif;
+  font-family: "Barlow", sans-serif;
+  font-weight: bold;
   font-size: 1.5rem;
   letter-spacing: 2px;
   word-wrap: break-word;
@@ -114,7 +116,8 @@ body {
 
 .footerPart ul {
   color: black;
-  font-family: "Francois One", sans-serif;
+  font-family: "Barlow", sans-serif;
+  font-weight: bold;
   font-size: 1.8rem;
   letter-spacing: 2px;
   list-style: none;
@@ -136,7 +139,8 @@ body {
   background-color: rgb(206, 40, 41);
   padding: 30px;
   border-radius: 25px;
-  font-family: "Francois One", sans-serif;
+  font-family: "Barlow", sans-serif;
+  font-weight: bold;
   font-size: 1.6rem;
   transition: 0.7s;
   margin-top: 1%;

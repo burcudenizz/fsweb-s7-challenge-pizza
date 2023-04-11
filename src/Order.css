@@ -44,7 +44,7 @@ h5 {
 h3 {
   color: black;
   margin: 1rem;
-  font-family: "Francois One", sans-serif;
+  font-family: "Barlow", sans-serif;
   font-size: 2.1rem;
   letter-spacing: 0.1rem;
 }
@@ -62,7 +62,8 @@ h3 {
   padding: 30px;
   width: 480px;
   border-radius: 5px;
-  font-family: "Francois One", sans-serif;
+  font-family: "Barlow", sans-serif;
+  font-weight: bold;
   font-size: 1.6rem;
   transition: 0.7s;
   border: 1px solid #faf7f2;
@@ -102,7 +103,8 @@ label {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-family: "Francois One", sans-serif;
+  font-family: "Barlow", sans-serif;
+  font-weight: bold;
   font-size: 1.5rem;
   max-width: 100%;
 }
@@ -184,7 +186,8 @@ input[type="radio"] {
 }
 
 select option {
-  font-family: "Francois One", sans-serif;
+  font-family: "Barlow", sans-serif;
+  font-weight: bold;
   font-size: 1.5rem;
   padding: 15px;
 }
@@ -201,7 +204,8 @@ select option {
   color: #000000;
   font-size: 1.5rem;
   padding: 5px;
-  font-family: "Francois One", sans-serif;
+  font-family: "Barlow", sans-serif;
+  font-weight: bold;
 }
 
 .footerPart2 {
@@ -214,7 +218,8 @@ select option {
 }
 .footerPart2 ul {
   color: black;
-  font-family: "Francois One", sans-serif;
+  font-family: "Barlow", sans-serif;
+  font-weight: bold;
   font-size: 1.8rem;
   letter-spacing: 2px;
   list-style: none;
@@ -248,8 +253,9 @@ değişebilir */
   font-family: "Gloria Hallelujah", cursive;
 }
 .parag {
-  font-family: "Francois One", sans-serif;
-  font-size: 1.6rem;
+  font-family: "Barlow", sans-serif;
+  font-weight: bold;
+  font-size: 1.4rem;
   color: #000000;
   padding-bottom: 2rem;
 }
@@ -269,7 +275,8 @@ değişebilir */
   font-size: 1.5rem;
 }
 .pizzaHeading {
-  font-family: "Francois One", sans-serif;
+  font-family: "Barlow", sans-serif;
+  font-weight: bold;
   font-size: 2.1rem;
   letter-spacing: 2px;
 }

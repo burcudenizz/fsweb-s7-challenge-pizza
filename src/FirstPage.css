@@ -35,7 +35,8 @@ body {
 .firstButton {
   padding: 30px;
   border-radius: 25px;
-  font-family: "Francois One", sans-serif;
+  font-family: "Barlow", sans-serif;
+  font-weight: bold;
   font-size: 1.7rem;
   transition: 0.7s;
   border: 1px solid #faf7f2;

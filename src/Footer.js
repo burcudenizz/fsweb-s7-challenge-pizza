@@ -15,7 +15,7 @@ export default function Footer() {
             style={{
               color: "black",
               fontSize: "2.5rem",
-              fontFamily: "Francois One, sans-serif",
+              fontFamily: "Barlow, sans-serif",
             }}
           >
             {" "}
