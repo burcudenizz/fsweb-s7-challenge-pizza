@@ -12,6 +12,7 @@ export default function FirstPage() {
       <div className="heading">
         <h1 className="mainHeadingFirst">
           <img
+            alt="logo"
             src="https://seeklogo.com/images/P/pizza-logo-42816D88BE-seeklogo.com.png"
             style={{ width: "100px" }}
           />

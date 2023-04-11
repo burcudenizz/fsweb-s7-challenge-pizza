@@ -65,10 +65,9 @@ h3 {
   font-weight: bold;
   font-size: 1.6rem;
   transition: 0.7s;
-  border: 1px solid #faf7f2;
-  border-radius: 15px;
   color: #000000;
   margin-top: 5rem;
+  border-radius: 15px;
   cursor: pointer;
 }
 .order_button:hover {
@@ -130,19 +129,21 @@ label {
   padding: 1rem;
   border-radius: 5px;
 }
+
 .orderSum {
-  padding: 2rem;
+  padding-top: 3rem;
   background-color: #ffffff;
-  border-radius: 15px;
-  border: 1px solid black;
+  border: 1px solid rgb(89, 89, 89);
   display: flex;
   flex-direction: column;
   justify-content: center;
+  border-radius: 15px;
 }
 .summary1 {
   display: flex;
+  padding-right: 2rem;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
 }
 .summary1 p {
   margin-left: 4rem;

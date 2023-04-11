@@ -1,10 +1,11 @@
 import React from "react";
 import "./Order.css";
 import * as yup from "yup";
-import Success from "./Success";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
+import Success from "./Success";
+
 /* YUP ADIMLARI 
 1.yup kurmak,import etmek,
 2.şema oluşturmak,
@@ -118,6 +119,11 @@ export default function Form() {
   const [buttonDisabledMi, setButtonDisabledMi] = useState(true);
   const [alreadyOrdered, setAlreadyOrdered] = useState([]);
 
+  const history = useHistory();
+  const toSuccessPage = () => {
+    history.push("/success");
+  };
+
   const checkFormError = (name, value) => {
     yup
       .reach(formSchema, name)
@@ -145,12 +151,16 @@ export default function Form() {
     });
   }
 
+  useEffect(() => {
+    formSchema.isValid(form).then((valid) => setButtonDisabledMi(!valid));
+  }, [form]);
+
   function handleSubmit(event) {
     event.preventDefault();
     axios
-      .post("https://reqres.in/api/users?page=2 ", form)
+      .post("https://reqres.in/api/users", form)
       .then((response) => {
-        console.log(response.data);
+        console.log("Sipariş başarıyla gönderildi:", response.data);
         setAlreadyOrdered([...alreadyOrdered, response.data]);
         setForm({
           pizzatype: "",
@@ -178,18 +188,13 @@ export default function Form() {
           email: "",
           ordernote: "",
         });
+        console.log(response.data);
+        history.push("/success");
       })
       .catch((err) => console.log(err));
+    console.error("Sipariş gönderilirken hata oluştu:", error);
   }
-
-  useEffect(() => {
-    formSchema.isValid(form).then((valid) => setButtonDisabledMi(!valid));
-  }, [form]);
-
-  const history = useHistory();
-  const toSuccessPage = () => {
-    history.push("/success");
-  };
+  console.log(form);
   return (
     <>
       <div className="formPart">
@@ -198,7 +203,6 @@ export default function Form() {
           <h2 className="pizzaHeading">Position Absolute Acı Pizza</h2>
           <div className="money">
             <h3 className="bold">85,50 ₺</h3>
-
             <p className="thin">4.9</p>
             <p className="thin">(200)</p>
           </div>
@@ -572,7 +576,7 @@ export default function Form() {
                   onClick={toSuccessPage}
                 >
                   SİPARİŞİ GÖNDER
-                </button>
+                </button>{" "}
               </div>
             </div>
           </div>

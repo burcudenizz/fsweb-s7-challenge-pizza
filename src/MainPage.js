@@ -6,6 +6,7 @@ import { useHistory } from "react-router-dom";
 
 const foodAdverts = [
   {
+    id: 1,
     image: "https://images.deliveryhero.io/image/fd-tr/LH/t5vx-hero.jpg",
     type: "Sebzeli Pizza",
     ingredients: "Mantar,Kabak,Peynir,Soğan",
@@ -14,6 +15,7 @@ const foodAdverts = [
     cost: "100 TL ",
   },
   {
+    id: 2,
     image: "https://images.deliveryhero.io/image/fd-tr/LH/m6n3-listing.jpg",
     type: "Sucuklu Pizza",
     ingredients: "Sucuk,Domates Sosu,Fesleğen",
@@ -22,6 +24,7 @@ const foodAdverts = [
     cost: "150 TL",
   },
   {
+    id: 3,
     image:
       "https://i1.haber7.net//haber/haber7/photos/2020/44/qRhAC_1604058164_302.jpg",
     type: "Üç Peynirli Pizza",
@@ -31,6 +34,7 @@ const foodAdverts = [
     cost: "100 TL ",
   },
   {
+    id: 4,
     image:
       "https://cdn.yemek.com/mncrop/940/625/uploads/2014/09/cikolatali-sufle-yemekcom.jpg",
     type: "Sufle",
@@ -58,6 +62,7 @@ export default function MainPage() {
         <h1 className="mainHeading">
           {" "}
           <img
+            alt="logo"
             src="https://seeklogo.com/images/P/pizza-logo-42816D88BE-seeklogo.com.png"
             style={{ width: "100px" }}
           />
@@ -84,8 +89,8 @@ export default function MainPage() {
       <div className="blackPart">
         <h1>Seçenekler</h1>
         <div className="AdvertsPart">
-          {foodAdverts.map((event) => (
-            <FoodAdverts foodAdverts={event} />
+          {foodAdverts.map((event, key) => (
+            <FoodAdverts key={event.id} foodAdverts={event} />
           ))}
         </div>
       </div>
