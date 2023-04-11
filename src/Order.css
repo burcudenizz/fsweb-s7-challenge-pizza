@@ -60,14 +60,13 @@ h3 {
 .order_button {
   background-color: rgb(206, 40, 41);
   padding: 30px;
-  width: 480px;
-  border-radius: 5px;
+  width: 100%;
   font-family: "Barlow", sans-serif;
   font-weight: bold;
   font-size: 1.6rem;
   transition: 0.7s;
   border: 1px solid #faf7f2;
-  margin-top: 1%;
+  border-radius: 15px;
   color: #000000;
   margin-top: 5rem;
   cursor: pointer;
@@ -135,8 +134,7 @@ label {
   padding: 2rem;
   background-color: #ffffff;
   border-radius: 15px;
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
-    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  border: 1px solid black;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -166,7 +164,8 @@ p {
 }
 .radio {
   display: flex;
-  width: 46rem;
+  justify-content: flex-start;
+  width: 60rem;
   flex-direction: row;
 }
 .pizza_size {
@@ -255,12 +254,12 @@ değişebilir */
 .parag {
   font-family: "Barlow", sans-serif;
   font-weight: bold;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   color: #000000;
   padding-bottom: 2rem;
 }
 .positionAbsolute {
-  max-width: 40%;
+  max-width: 35%;
   margin-bottom: 2rem;
 }
 .money {

@@ -43,7 +43,7 @@ const foodAdverts = [
 export default function MainPage() {
   const history = useHistory();
   const toOrderPage = () => {
-    history.push("/pizza");
+    history.push("/order-pizza");
   };
   const toMainPage = () => {
     history.push("/mainpage");

@@ -559,25 +559,24 @@ export default function Form() {
                 <h2>Sipariş Toplamı</h2>
                 <div className="summary1">
                   <p>Seçimler</p>
-                  <p>50 TL</p>
+                  <p>85,5 ₺</p>
                 </div>
                 <div className="summary1">
                   <p>Toplam</p>
-                  <p>150 TL</p>
+                  <p>150 ₺</p>
                 </div>
+                <button
+                  className="order_button"
+                  type="submit"
+                  disabled={buttonDisabledMi}
+                  onClick={toSuccessPage}
+                >
+                  SİPARİŞİ GÖNDER
+                </button>
               </div>
             </div>
-            <button
-              className="order_button"
-              type="submit"
-              disabled={buttonDisabledMi}
-              onClick={toSuccessPage}
-            >
-              SİPARİŞİ GÖNDER
-            </button>
           </div>
         </form>
-        {console.log(form)}
       </div>
     </>
   );
