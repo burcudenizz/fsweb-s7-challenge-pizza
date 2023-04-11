@@ -1,6 +1,6 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
-import Form from "./Form";
+
 export default function Success(props) {
   const { alreadyOrdered } = props;
   const history = useHistory();

@@ -160,35 +160,8 @@ export default function Form() {
     axios
       .post("https://reqres.in/api/users", form)
       .then((response) => {
-        console.log("Sipariş başarıyla gönderildi:", response.data);
         setAlreadyOrdered([...alreadyOrdered, response.data]);
-        setForm({
-          pizzatype: "",
-          pizzasize: "",
-          doughsize: "",
-          cheddar: false,
-          pepper: false,
-          tomato: false,
-          sucuk: false,
-          onion: false,
-          chicken: false,
-          corn: false,
-          pineapple: false,
-          courgette: false,
-          mushroom: false,
-          tuna: false,
-          mint: false,
-          oregano: false,
-          sausage: false,
-          ham: false,
-          olive: false,
-          quantity: "",
-          namesurname: "",
-          address: "",
-          email: "",
-          ordernote: "",
-        });
-        console.log(response.data);
+        console.log("Sipariş başarıyla gönderildi:", response.data);
         history.push("/success");
       })
       .catch((err) => console.log(err));
@@ -217,7 +190,7 @@ export default function Form() {
           </p>
           <hr size="3" />
         </div>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} buttonDisabledMi={buttonDisabledMi}>
           <div className="formContent">
             <div className="pizza_type">
               <h3>
