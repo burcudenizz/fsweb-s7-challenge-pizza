@@ -279,3 +279,21 @@ değişebilir */
   font-size: 2.1rem;
   letter-spacing: 2px;
 }
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: 50px;
+  width: 250px;
+}
+input[type="text"]::placeholder {
+  font-family: "Barlow", sans-serif;
+  font-size: 1.5rem;
+}
+input[type="email"]::placeholder {
+  font-family: "Barlow", sans-serif;
+  font-size: 1.5rem;
+}
+input[type="number"] {
+  font-family: "Barlow", sans-serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
