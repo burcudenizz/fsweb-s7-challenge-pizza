@@ -3,7 +3,7 @@ import React from "react";
 export default function Footer() {
   return (
     <div>
-      <div class="FooterMenu">
+      <div className="FooterMenu">
         <ul className="footer">
           <li>Menü</li>
           <li>İletişim</li>

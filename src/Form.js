@@ -4,7 +4,6 @@ import * as yup from "yup";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
-import Success from "./Success";
 
 /* YUP ADIMLARI 
 1.yup kurmak,import etmek,
@@ -64,8 +63,8 @@ const formSchema = yup.object().shape({
 export default function Form() {
   const [form, setForm] = useState({
     pizzatype: "",
-    pizzasize: "",
-    doughsize: "",
+    pizzasize: "none",
+    doughsize: "none",
     cheddar: false,
     pepper: false,
     tomato: false,
@@ -93,22 +92,22 @@ export default function Form() {
     pizzatype: "",
     pizzasize: "",
     doughsize: "",
-    cheddar: false,
-    pepper: false,
-    tomato: false,
-    sucuk: false,
-    onion: false,
-    chicken: false,
-    corn: false,
-    pineapple: false,
-    courgette: false,
-    mushroom: false,
-    tuna: false,
-    mint: false,
-    oregano: false,
-    sausage: false,
-    ham: false,
-    olive: false,
+    cheddar: "",
+    pepper: "",
+    tomato: "",
+    sucuk: "",
+    onion: "",
+    chicken: "",
+    corn: "",
+    pineapple: "",
+    courgette: "",
+    mushroom: "",
+    tuna: "",
+    mint: "",
+    oregano: "",
+    sausage: "",
+    ham: "",
+    olive: "",
     quantity: "",
     namesurname: "",
     address: "",
@@ -117,12 +116,25 @@ export default function Form() {
   });
 
   const [buttonDisabledMi, setButtonDisabledMi] = useState(true);
-  const [alreadyOrdered, setAlreadyOrdered] = useState([]);
+  // const [newOrder, setNewOrder] = useState(null);
+
+  useEffect(() => {
+    formSchema.isValid(form).then((valid) => setButtonDisabledMi(!valid));
+  }, [form]);
 
   const history = useHistory();
   const toSuccessPage = () => {
     history.push("/success");
   };
+
+  function handleChange(event) {
+    const { name, value } = event.target;
+    checkFormError(name, value);
+    setForm({
+      ...form,
+      [name]: value,
+    });
+  }
 
   const checkFormError = (name, value) => {
     yup
@@ -142,32 +154,45 @@ export default function Form() {
       });
   };
 
-  function handleChange(event) {
-    const { name, value } = event.target;
-    checkFormError(name, value);
-    setForm({
-      ...form,
-      [name]: value,
-    });
-  }
-
-  useEffect(() => {
-    formSchema.isValid(form).then((valid) => setButtonDisabledMi(!valid));
-  }, [form]);
-
   function handleSubmit(event) {
     event.preventDefault();
     axios
       .post("https://reqres.in/api/users", form)
       .then((response) => {
-        setAlreadyOrdered([...alreadyOrdered, response.data]);
+        // setNewOrder(response.data);
         console.log("Sipariş başarıyla gönderildi:", response.data);
+        setForm({
+          pizzatype: "",
+          pizzasize: "none",
+          doughsize: "none",
+          cheddar: false,
+          pepper: false,
+          tomato: false,
+          sucuk: false,
+          onion: false,
+          chicken: false,
+          corn: false,
+          pineapple: false,
+          courgette: false,
+          mushroom: false,
+          tuna: false,
+          mint: false,
+          oregano: false,
+          sausage: false,
+          ham: false,
+          olive: false,
+          quantity: "",
+          namesurname: "",
+          address: "",
+          email: "",
+          ordernote: "",
+        });
         history.push("/success");
       })
       .catch((err) => console.log(err));
     console.error("Sipariş gönderilirken hata oluştu:", error);
   }
-  console.log(form);
+  // console.log(form);
   return (
     <>
       <div className="formPart">
@@ -190,7 +215,7 @@ export default function Form() {
           </p>
           <hr size="3" />
         </div>
-        <form onSubmit={handleSubmit} buttonDisabledMi={buttonDisabledMi}>
+        <form onSubmit={handleSubmit}>
           <div className="formContent">
             <div className="pizza_type">
               <h3>
@@ -297,6 +322,7 @@ export default function Form() {
                   <input
                     type="checkbox"
                     name="cheddar"
+                    id="cheddar"
                     value={form.cheddar}
                     onChange={handleChange}
                     className="check"
@@ -307,6 +333,7 @@ export default function Form() {
                   <input
                     type="checkbox"
                     name="pepper"
+                    id="pepper"
                     value={form.pepper}
                     onChange={handleChange}
                     className="check"
@@ -317,6 +344,7 @@ export default function Form() {
                   <input
                     type="checkbox"
                     name="tomato"
+                    id="tomato"
                     value={form.tomato}
                     onChange={handleChange}
                     className="check"
@@ -327,6 +355,7 @@ export default function Form() {
                   <input
                     type="checkbox"
                     name="sucuk"
+                    id="sucuk"
                     value={form.sucuk}
                     onChange={handleChange}
                     className="check"
@@ -337,6 +366,7 @@ export default function Form() {
                   <input
                     type="checkbox"
                     name="onion"
+                    id="onion"
                     value={form.onion}
                     onChange={handleChange}
                     className="check"
@@ -347,6 +377,7 @@ export default function Form() {
                   <input
                     type="checkbox"
                     name="chicken"
+                    id="chicken"
                     value={form.chicken}
                     onChange={handleChange}
                     className="check"
@@ -357,6 +388,7 @@ export default function Form() {
                   <input
                     type="checkbox"
                     name="corn"
+                    id="corn"
                     value={form.corn}
                     onChange={handleChange}
                     className="check"
@@ -367,6 +399,7 @@ export default function Form() {
                   <input
                     type="checkbox"
                     name="pineapple"
+                    id="pineapple"
                     value={form.pineapple}
                     onChange={handleChange}
                     className="check"
@@ -377,6 +410,7 @@ export default function Form() {
                   <input
                     type="checkbox"
                     name="courgette"
+                    id="courgette"
                     value={form.courgette}
                     onChange={handleChange}
                     className="check"
@@ -387,6 +421,7 @@ export default function Form() {
                   <input
                     type="checkbox"
                     name="mushroom"
+                    id="mushroom"
                     value={form.mushroom}
                     onChange={handleChange}
                     className="check"
@@ -397,6 +432,7 @@ export default function Form() {
                   <input
                     type="checkbox"
                     name="tuna"
+                    id="tuna"
                     value={form.tuna}
                     onChange={handleChange}
                     className="check"
@@ -407,6 +443,7 @@ export default function Form() {
                   <input
                     type="checkbox"
                     name="mint"
+                    id="mint"
                     value={form.mint}
                     onChange={handleChange}
                     className="check"
@@ -417,6 +454,7 @@ export default function Form() {
                   <input
                     type="checkbox"
                     name="oregano"
+                    id="oregano"
                     value={form.oregano}
                     onChange={handleChange}
                     className="check"
@@ -427,6 +465,7 @@ export default function Form() {
                   <input
                     type="checkbox"
                     name="sausage"
+                    id="sausage"
                     value={form.sausage}
                     onChange={handleChange}
                     className="check"
@@ -437,6 +476,7 @@ export default function Form() {
                   <input
                     type="checkbox"
                     name="ham"
+                    id="ham"
                     value={form.ham}
                     onChange={handleChange}
                     className="check"
@@ -447,6 +487,7 @@ export default function Form() {
                   <input
                     type="checkbox"
                     name="olive"
+                    id="olive"
                     value={form.olive}
                     onChange={handleChange}
                     className="check"
@@ -546,7 +587,6 @@ export default function Form() {
                   className="order_button"
                   type="submit"
                   disabled={buttonDisabledMi}
-                  onClick={toSuccessPage}
                 >
                   SİPARİŞİ GÖNDER
                 </button>{" "}

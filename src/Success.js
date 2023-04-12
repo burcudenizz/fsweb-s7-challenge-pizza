@@ -1,8 +1,7 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 
-export default function Success(props) {
-  const { alreadyOrdered } = props;
+export default function Success() {
   const history = useHistory();
   const toMainPage = () => {
     history.push("/mainpage");
