@@ -116,27 +116,17 @@ export default function Form() {
   });
 
   const [buttonDisabledMi, setButtonDisabledMi] = useState(true);
+  const history = useHistory();
+  const toSuccessPage = () => {
+    history.push("/success");
+  };
+
   // const [newOrder, setNewOrder] = useState(null);
 
   // form değiştirkçe useEffect aktifleşir ve formShema'ya göre formun validasyonunu kontrol eder.FormShemaya uyuyorsa tamamı, gönderme butonunu aktifleştirir.
   useEffect(() => {
     formSchema.isValid(form).then((valid) => setButtonDisabledMi(!valid));
   }, [form]);
-
-  const history = useHistory();
-  const toSuccessPage = () => {
-    history.push("/success");
-  };
-
-  function handleChange(event) {
-    const { name, value } = event.target;
-    checkFormError(name, value);
-    setForm({
-      ...form,
-      [name]: value,
-    });
-  }
-  //hataları her değişiklik yapıldığında check ediyor.(onChange içine koyarak)
 
   const checkFormError = (name, value) => {
     yup
@@ -155,6 +145,16 @@ export default function Form() {
         });
       });
   };
+
+  function handleChange(event) {
+    const { name, value } = event.target;
+    checkFormError(name, value);
+    setForm({
+      ...form,
+      [name]: value,
+    });
+  }
+  //hataları her değişiklik yapıldığında check ediyor.(onChange içine koyarak)
 
   // const [toplam, setToplam] = useState(85.5);
   // const [sumArr, setSumArr] = useState([]);
