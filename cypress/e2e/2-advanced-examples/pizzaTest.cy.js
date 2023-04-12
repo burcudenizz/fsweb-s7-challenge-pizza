@@ -20,7 +20,7 @@ describe("Form Gönderiliyor Mu? Testi", () => {
 
     cy.get('input[name="address"]').type("Armağan İlci Mahallesi");
     cy.get('input[name="email"]').type("dnzzburcu@gmail.com");
-    cy.get('input[name="quantity"]').type("3");
+    cy.get('input[name="quantity"]');
 
     cy.get('input[name="ordernote"]').type("Yanında ketçap mayonez istiyorum.");
 

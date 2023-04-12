@@ -118,6 +118,7 @@ export default function Form() {
   const [buttonDisabledMi, setButtonDisabledMi] = useState(true);
   // const [newOrder, setNewOrder] = useState(null);
 
+  // form değiştirkçe useEffect aktifleşir ve formShema'ya göre formun validasyonunu kontrol eder.FormShemaya uyuyorsa tamamı, gönderme butonunu aktifleştirir.
   useEffect(() => {
     formSchema.isValid(form).then((valid) => setButtonDisabledMi(!valid));
   }, [form]);
@@ -135,6 +136,7 @@ export default function Form() {
       [name]: value,
     });
   }
+  //hataları her değişiklik yapıldığında check ediyor.(onChange içine koyarak)
 
   const checkFormError = (name, value) => {
     yup
@@ -207,7 +209,7 @@ export default function Form() {
       .catch((err) => console.log(err));
     console.error("Sipariş gönderilirken hata oluştu:", error);
   }
-  console.log(form);
+  // console.log(form);
   return (
     <>
       <div className="formPart">
