@@ -211,7 +211,6 @@ export default function Form() {
   return (
     <>
       <div className="formPart">
-        <h1 className="formHeading">SİPARİŞİNİZİ OLUŞTURUN</h1>
         <div className="positionAbsolute">
           <h2 className="pizzaHeading">Position Absolute Acı Pizza</h2>
           <div className="money">
@@ -332,7 +331,7 @@ export default function Form() {
             </div>
             <div className="ingredients">
               <h3 className="headingIngredients">
-                Ek Malzemeleri Seçiniz(Her biri 5₺ )
+                Ek Malzemeleri Seçiniz (Her biri 5₺ )
               </h3>
               <div className="ingredientsContent">
                 <label>

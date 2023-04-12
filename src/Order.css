@@ -4,7 +4,7 @@
   background-color: #850303;
 }
 .mobile {
-  max-width: 100%;
+  max-width: 70%;
   margin: 0;
   padding: 0;
 }
@@ -27,7 +27,7 @@ h5 {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   margin-top: 3rem;
 }
 .formPart {
@@ -45,18 +45,10 @@ h3 {
   color: black;
   margin: 1rem;
   font-family: "Barlow", sans-serif;
-  font-size: 2.1rem;
+  font-size: 1.7rem;
   letter-spacing: 0.1rem;
 }
-.formHeading {
-  color: #000000;
-  margin-top: 15px;
-  font-family: "Russo One", sans-serif;
-  font-size: 3rem;
-  letter-spacing: 2px;
-  text-shadow: 2px 3px #faf7f2;
-  margin-bottom: 5rem;
-}
+
 .order_button {
   background-color: rgb(206, 40, 41);
   padding: 30px;
@@ -103,7 +95,7 @@ label {
   align-items: center;
   font-family: "Barlow", sans-serif;
   font-weight: bold;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   max-width: 100%;
 }
 
@@ -113,21 +105,24 @@ label {
 }
 .contact input {
   width: 46rem;
-  padding: 1rem;
+  padding: 0.5rem;
   border-radius: 5px;
 }
 .order_note input {
   width: 46rem;
-  padding: 1rem;
+  padding: 0.9rem;
   border-radius: 5px;
 }
 .order_note {
-  margin-top: 5rem;
+  margin-top: 2rem;
 }
 .quantity input {
   width: 6rem;
   padding: 1rem;
   border-radius: 5px;
+}
+.quantity {
+  padding-right: 2.2rem;
 }
 
 .orderSum {
@@ -141,7 +136,7 @@ label {
 }
 .summary1 {
   display: flex;
-  padding-right: 2rem;
+  padding-right: 5rem;
   flex-direction: row;
   justify-content: center;
 }
@@ -151,7 +146,7 @@ label {
 }
 .lastPart {
   display: flex;
-  margin-top: 4rem;
+  margin-top: 5rem;
   max-width: 100%;
 }
 p {
