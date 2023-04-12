@@ -81,7 +81,7 @@ export default function Form() {
     sausage: false,
     ham: false,
     olive: false,
-    quantity: "",
+    quantity: "1",
     namesurname: "",
     address: "",
     email: "",
@@ -154,6 +154,21 @@ export default function Form() {
       });
   };
 
+  // const [toplam, setToplam] = useState(85.5);
+  // const [sumArr, setSumArr] = useState([]);
+  // function calculate() {
+  //   if (Object.values(form) === "false") {
+  //     setSumArr(Object.keys(form));
+  //   }
+  //   setToplam(toplam + sumArr.length);
+  //   return toplam;
+  // }
+
+  const totalPrice =
+    (85.5 +
+      Object.values(form).filter((value) => value === "false").length * 5) *
+    form.quantity;
+
   function handleSubmit(event) {
     event.preventDefault();
     axios
@@ -192,7 +207,7 @@ export default function Form() {
       .catch((err) => console.log(err));
     console.error("Sipariş gönderilirken hata oluştu:", error);
   }
-  // console.log(form);
+  console.log(form);
   return (
     <>
       <div className="formPart">
@@ -316,7 +331,9 @@ export default function Form() {
               </div>
             </div>
             <div className="ingredients">
-              <h3 className="headingIngredients">Ek Malzemeleri Seçiniz</h3>
+              <h3 className="headingIngredients">
+                Ek Malzemeleri Seçiniz(Her biri 5₺ )
+              </h3>
               <div className="ingredientsContent">
                 <label>
                   <input
@@ -581,7 +598,7 @@ export default function Form() {
                 </div>
                 <div className="summary1">
                   <p>Toplam</p>
-                  <p>150 ₺</p>
+                  <p>{totalPrice} ₺</p>
                 </div>
                 <button
                   className="order_button"
