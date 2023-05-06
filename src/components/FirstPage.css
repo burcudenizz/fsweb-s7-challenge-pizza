@@ -33,7 +33,7 @@ body {
   text-shadow: 2px 3px #0e0d0d;
 }
 .firstButton {
-  padding: 30px;
+  padding: 1rem;
   border-radius: 25px;
   font-family: "Barlow", sans-serif;
   font-weight: bold;
