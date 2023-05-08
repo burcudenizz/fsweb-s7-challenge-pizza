@@ -117,9 +117,6 @@ export default function Form() {
 
   const [buttonDisabledMi, setButtonDisabledMi] = useState(true);
   const history = useHistory();
-  const toSuccessPage = () => {
-    history.push("/success");
-  };
 
   // const [newOrder, setNewOrder] = useState(null);
 
